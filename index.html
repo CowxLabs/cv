@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Demo</title>
+<meta name="description" content="GitHub Pages demo: interactive CV">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0d1117; --bg2: #161b22; --bg3: #21262d;
+  --text: #c9d1d9; --text2: #8b949e; --heading: #f0f6fc;
+  --primary: #58a6ff; --primary-hover: #79c0ff;
+  --border: #30363d; --success: #3fb950; --warning: #d29922; --danger: #f85149;
+  --card-bg: #161b22; --shadow: 0 1px 3px rgba(0,0,0,.3);
+  --radius: 8px; --font: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;
+  --transition: .3s ease;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --bg2: #f6f8fa; --bg3: #eaeef2;
+  --text: #24292f; --text2: #57606a; --heading: #1f2328;
+  --primary: #0969da; --primary-hover: #0550ae;
+  --border: #d0d7de; --card-bg: #ffffff; --shadow: 0 1px 3px rgba(0,0,0,.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font); background: var(--bg); color: var(--text);
+  line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;
+  transition: background var(--transition), color var(--transition);
+}
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px; background: var(--bg2); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px);
+  transition: background var(--transition);
+}
+.logo { font-size: 1.25rem; font-weight: 700; color: var(--heading); display: flex; align-items: center; gap: 8px; }
+.logo-icon { width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; }
+#theme-toggle {
+  background: var(--bg3); border: 1px solid var(--border); color: var(--text);
+  width: 40px; height: 40px; border-radius: var(--radius); cursor: pointer;
+  font-size: 18px; display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+#theme-toggle:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+main { flex: 1; max-width: 960px; margin: 0 auto; padding: 40px 24px; width: 100%; }
+footer {
+  text-align: center; padding: 24px; color: var(--text2);
+  border-top: 1px solid var(--border); font-size: .875rem;
+  transition: border-color var(--transition);
+}
+footer a { color: var(--primary); }
+.hero { text-align: center; padding: 60px 0 40px; }
+.hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--heading); margin-bottom: 16px; }
+.hero p { font-size: 1.15rem; color: var(--text2); max-width: 640px; margin: 0 auto 24px; }
+.btn {
+  display: inline-block; background: var(--primary); color: #fff; padding: 10px 24px;
+  border-radius: var(--radius); font-weight: 600; border: none; cursor: pointer;
+  transition: all var(--transition); font-size: .95rem;
+}
+.btn:hover { background: var(--primary-hover); text-decoration: none; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { background: var(--bg3); }
+.card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; transition: all var(--transition);
+}
+.card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(88,166,255,.15); }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.section-title { font-size: 1.5rem; font-weight: 700; color: var(--heading); margin: 40px 0 20px; }
+.tag {
+  display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: .8rem;
+  background: var(--bg3); color: var(--primary); border: 1px solid var(--border);
+}
+.badge {
+  display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: .75rem;
+  font-weight: 600;
+}
+.badge-green { background: rgba(63,185,80,.15); color: var(--success); }
+.badge-yellow { background: rgba(210,153,34,.15); color: var(--warning); }
+.badge-red { background: rgba(248,81,73,.15); color: var(--danger); }
+.badge-blue { background: rgba(88,166,255,.15); color: var(--primary); }
+</style>
+
+</head>
+<body>
+<nav>
+  <a href="/" class="logo"><span class="logo-icon">&#x25B6;</span>CV</a>
+  <button id="theme-toggle" aria-label="Toggle theme">&#x2600;</button>
+</nav>
+<main>
+  <section class="hero">
+    <h1>CV</h1>
+    <p>GitHub Pages demo: a interactive CV with dark/light mode.</p>
+  </section>
+  
+<div style="text-align:center;margin-bottom:32px">
+  <div style="width:100px;height:100px;border-radius:50%;background:var(--bg3);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;border:3px solid var(--primary)">&#x1F468;</div>
+  <h1 style="color:var(--heading);font-size:2rem">Alex Rivera</h1>
+  <p style="color:var(--text2)">Senior Full-Stack Developer &middot; 6+ years experience</p>
+  <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap">
+    <a href="#" class="btn">&#x1F4E5; Download PDF</a>
+    <a href="#" class="btn btn-outline">&#x1F4F1; Contact</a>
+  </div>
+</div>
+<h2 class="section-title">Experience</h2>
+<div style="position:relative;padding-left:32px">
+  <div style="position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--border)"></div>
+  <div style="position:relative;margin-bottom:24px">
+    <div style="position:absolute;left:-26px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid var(--bg)"></div>
+    <div class="card"><h3 style="color:var(--heading);font-size:1rem">Senior Developer</h3><p style="color:var(--primary);font-size:.85rem">TechCorp &middot; 2022 - Present</p><ul style="color:var(--text2);font-size:.85rem;margin:8px 0 0 16px"><li>Led frontend architecture for SaaS platform serving 50k+ users</li><li>Reduced bundle size by 45% through code splitting and tree shaking</li><li>Mentored team of 4 junior and mid-level developers</li></ul></div>
+  </div>
+  <div style="position:relative;margin-bottom:24px">
+    <div style="position:absolute;left:-26px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid var(--bg)"></div>
+    <div class="card"><h3 style="color:var(--heading);font-size:1rem">Full-Stack Developer</h3><p style="color:var(--primary);font-size:.85rem">StartupXYZ &middot; 2019 - 2022</p><ul style="color:var(--text2);font-size:.85rem;margin:8px 0 0 16px"><li>Built MVP that grew to 10k users in first 6 months</li><li>Implemented CI/CD pipeline with automated testing and deployment</li><li>Designed and built RESTful API serving 1M+ requests/day</li></ul></div>
+  </div>
+  <div style="position:relative;margin-bottom:24px">
+    <div style="position:absolute;left:-26px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid var(--bg)"></div>
+    <div class="card"><h3 style="color:var(--heading);font-size:1rem">Junior Developer</h3><p style="color:var(--primary);font-size:.85rem">WebAgency &middot; 2018 - 2019</p><ul style="color:var(--text2);font-size:.85rem;margin:8px 0 0 16px"><li>Built responsive websites for 15+ clients using React and WordPress</li><li>Developed custom WordPress plugins and themes</li></ul></div>
+  </div>
+</div>
+<h2 class="section-title">Skills</h2>
+<section class="grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
+  <div class="card"><h3 style="color:var(--heading);font-size:.9rem">Frontend</h3><div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">CSS</span></div></div>
+  <div class="card"><h3 style="color:var(--heading);font-size:.9rem">Backend</h3><div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px"><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">Go</span><span class="tag">GraphQL</span></div></div>
+  <div class="card"><h3 style="color:var(--heading);font-size:.9rem">DevOps</h3><div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px"><span class="tag">Docker</span><span class="tag">K8s</span><span class="tag">AWS</span><span class="tag">CI/CD</span></div></div>
+</section>
+<h2 class="section-title">Education</h2>
+<section class="card" style="display:flex;gap:16px;align-items:center">
+  <div style="font-size:2rem">&#x1F393;</div>
+  <div><h3 style="color:var(--heading);font-size:1rem">B.S. Computer Science</h3><p style="color:var(--text2);font-size:.85rem">University of Technology &middot; 2014 - 2018 &middot; GPA 3.8</p></div>
+</section>
+</main>
+<footer>
+  <p>Powered by <a href="https://pages.github.com">GitHub Pages</a> &mdash; <a href="https://github.com/CowxLabs/cv">Source</a></p>
+</footer>
+<script>
+const toggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const stored = localStorage.getItem('theme');
+if (stored) html.setAttribute('data-theme', stored);
+else html.setAttribute('data-theme', 'dark');
+toggle.textContent = html.getAttribute('data-theme') === 'dark' ? '\u2600' : '\uD83C\uDF19';
+toggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  toggle.textContent = next === 'dark' ? '\u2600' : '\uD83C\uDF19';
+});
+</script>
+</body>
+</html>
